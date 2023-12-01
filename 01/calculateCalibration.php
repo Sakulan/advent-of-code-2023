@@ -35,31 +35,7 @@ class calculateCalibration
             $numbers[] = $firstDigit.$lastDigit;
         }
 
-        // first star
+        // first star => 54573
         return array_sum($numbers);
-    }
-
-    public function getNumbersFromAString($string)
-    {
-        $strLenght = strlen($string);
-
-        $indexes = [];
-        for ($index = 0;  $index < $strLenght ; $index++)
-        {
-            $char = substr($string, $index, 1);
-    
-            if (is_numeric($char))
-            {
-                $indexes[] = $index;
-            }
-        }
-
-        $min = min($indexes);
-        $max = max($indexes);
-
-        $firstDigit = substr($string, $min, 1);
-        $lastDigit = substr($string, $max, 1);
-
-        return $firstDigit.$lastDigit;
     }
 }
